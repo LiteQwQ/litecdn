@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help with brookeafk.com</title>
+<meta name="description" content="">
+<meta name="author" content="BrookeAFK">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_icons/favicon-16x16.png">
+<link rel="manifest" href="favicon_icons/site.webmanifest">
+<link rel="shortcut icon" type="image/x-icon" href="favicon_icons/favicon.ico">
+<script type="text/javascript" src="./jquery-3.6.3.min.js"></script>
+<script> 
+</script>
+</head>
+<body style="background-image: url(https://pit.wiki/images/map_abyss_night.png)">
+<div id="header"></div>
+<div class="box">
+<span class="body" style="font-family: Inter">
+<span class="header">Help with brookeafk.com</span><br>
+<span class="subheader">From <a href="./">brookeafk.com</a></span><br>
+<span class="subheader">También disponible en <a href="help">español</a>. (Also available in <a href="help_es">Spanish</a>).</span>
+<hr>
+<p><strong>Welcome!</strong> Thanks for checking out this help article.</p>
+
+<div style="background-color: rgba(0, 0, 0, 0.1); padding: 10px; display: inline-block;">
+    <b>Table of Contents</b><br><span style="font-weight: 500;">
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="#section-basic">Basic Site Usage</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="#section-settings">Settings</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="#section-custom-palettes">Custom Palettes</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="#section-faq">Frequently Asked Questions</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://discord.gg/nuUms8r9Ke" target="_blank">Link to Support Discord Server</a></span>
+</div>
+
+<h2 id="section-basic">Basic Site Usage</h2>
+<p><b>brookeafk.com</b> is a website used to track when events in <a href="https://pit.wiki/The_Hypixel_Pit" target="_blank">The Hypixel Pit</a> occur. This can be helpful if players want to participate in specific events or are curious about what's about to happen in-game.</p>
+<img src="./help_images/example.png" class="bigimage">
+<p>On the site, events are displayed in order. The timestamps on the right are a countdown until the event happens and a 24-hour timestamp as to the time of the event happening in your local time zone. For <a href="https://pit.wiki/Major_Event" target="_blank">major events</a>, this countdown and timestamp refer to when the three-minute in-game countdown for the event starts, not the actual starting time of the event. This is to be consistent with <a href="https://pit.wiki/Pit_Supporter" target="_blank">Pit Supporter</a>. Major events are also indicated with a faint white outline around the event.</p>
+
+
+<h2 id="section-settings">Settings</h2>
+<p>To change brookeafk.com's settings, click the Settings icon (<span style="font-family: Material">settings</span>). A settings menu will drop down with various items to click.</p>
+
+<img src="./help_images/settings_menu.png" width="100%">
+
+<p>The items are the following:</p>
+<ul>
+    <li><b>Theme</b>: Changes whether the background is black or white. It also changes the default palettes!</li>
+    <li><b>Palette</b>: Changes the colors of the events. There's twelve default ones in total; try clicking each one to see the colors. However, starting in v1.1.0, you can create a custom palette to use on the site! Read more about it <a href="#section-custom-palettes">here</a>.</li>
+    <li><b>Font</b>: Controls the typeface of everything on the site. The default font is <b>Inter</b>, which is all of this text. <span style="font-family: minecraft"><b>Minecraft</b> is this typeface.</span> <span style="font-family: sans-serif"><b>Sans-serif</b> defaults to the default sans-serif font on your browser (this one).</span> Learn how to change this here: <a href="https://support.mozilla.org/en-US/kb/change-fonts-and-colors-websites-use#w_changing-font" target="_blank">Firefox</a> &ndash; <a href="https://www.maketecheasier.com/change-default-font-chrome/" target="_blank">Chrome</a> &ndash; <a href="https://mcmw.abilitynet.org.uk/changing-fonts-microsoft-edge-windows-10" target="_blank">Edge</a></span>.</li>
+    <li><b>Icons</b>: Whether the images of events appear to the left of the events.</li>
+    <li><b>Tab timer</b>: Toggles the timer in the tab, displaying a countdown to the next event you have visible. It looks something like this: <b>[🏯] SPI 4m 15s</b>.
+    <li><b>Major event effects</b>: Changes the effects that cause major events to stand out. <b>Border</b> adds and removes the white border around major events, and <b>Shadow</b> toggles the shadow effect.</li>
+    <li><b>Event spacing</b>: Changes the amount of empty space between events. <b>Big</b> is the default, but <b>None</b> makes the site look more like the older versions of brookeafk.com.</li>
+    </ul>
+    <ul>
+
+    <li><b><span class="me">Pre-event notifications</span></b>: These notify the user when certain events are about to start.<br>Upon clicking <code>5m</code>, <code>3m</code>, or <code>1m</code>, more settings options will appear.</li>
+
+    <ul><li><b>Audio notifications</b>: Whether you'll be notified through a chime on the site.</li>
+    <li><b>Desktop notifications</b>: Whether you'll be notified through notifications on your desktop.</li>
+<li>Additionally, bell icons (<span style="font-family: Material">notifications</span>) will appear to the right of the event names on the right side of the page. Clicking one of these will enable notifications for that event.</li></ul>
+    <li><b>Timestamps</b>: Toggles certain countdown timers and clocks. <b>Time of Day</b> is the timestamp that displays when an event will happen (e.g. 11:56). <b>Time Until Event</b> is the countdown timer to each event (e.g. 23m 51s). <b>Day and Map</b> controls the bar that displays the day-night cycle and the map change timer.<p><b>NOTE:</b> Many Chrome users have told me that they don't receive notifications when brookeafk.com isn't focused. <span style="color: #a356fd"><b>This should be fixed as of April 14th, 2023.</b></span> If you're having this problem, make sure <a href="https://support.google.com/chrome/answer/3220216?hl=en" target="_blank">Chrome can send notifications</a> or switch to <a href="https://www.mozilla.org/en-CA/firefox/new/" target="_blank">another non-Chromium browser</a>. Alternatively, just create a new window in Chrome (<kbd>Control</kbd> + <kbd>N</kbd>) and use that for your brookeafk.com needs.</p>
+    </li>
+
+    
+
+    <li><b>Clock style</b>: Whether the timestmaps appear as 24-hour (17:13) or 12-hour (5:13 pm).</li>
+
+    <li><b>Flashing text</b>: Changes the amount of time until an event starts flashing and turning red. You can disable it by pressing <code>Never</code>.</li>
+    <li><b>Event text</b>: Changes how events are displayed. <b>Modern</b> uses the new style, which places the event first (<b>King of the Ladder</b> in 4m 10s &mdash; 12:01), while <b>Classic</b> uses the style that was used on brookeafk.com in 2022 (4m 10s: <b>King of the Ladder</b> (12:01)) <b>Classic</b> mode also changes the names of events to look like they did before (KOTH, KOTL, All bounty) instead of their full names (King of the Hill, King of the Ladder, Everyone Gets a Bounty.)</li>
+    <li><b>Version</b>: Toggles between the current version and the old (v0.6.7) one.</li>
+    <li>Clicking the names of events on the right (Pizza, Raffle, Squads, etc.) will toggle the visibility of the event. Selecting <b>Majors Only</b> will automatically only show major events. <b>Minors Only</b> will do the same for minor events. <b>Select All</b> and <b class="mc">Deselect All</b> will show and hide all events respectively. <b class="mc">Clear Settings</b> will completely erase all settings you've entered into the site. <b>Preview Audio</b> will play the aforementioned chime to make sure it works on your device.</li>
+    </ul>
+    
+<p>If the settings aren't saving for you for some reason, you can just embed the settings in the URL. To do that, just select which settings you want to implement to the site (see below), and add them to the end of the URL with a question mark, such as <code>https://brookeafk.com?palette=3&theme=light</code>. Such settings are below:</p>
+<ul>
+  <li><code>theme</code>: <code>dark</code> for the dark theme, <code>light</code> for the light one.</li>
+  <li><code>palette</code>: <code>gradients0</code> for the default gradient color scheme, <code>gradients1</code> for the alternate one, <code>0</code> for the Origins color scheme, <code>1</code> for Sunrise/Sunset, <code>2</code> for Ocean/Beachside, <code>3</code> for Business/Bubblegum, and <code>4</code> for Phoenix/Sienna. If you have a <a href="#section-custom-palettes">custom palette</a>, you can input its code here instead.</li>
+  <li><code>font</code>: <code>0</code> for Inter, <code>1</code> for <span style="font-family: sans-serif">sans-serif</a>, <code>2</code> for <span style="font-family: Minecraft">Minecraft</a>.</li>
+  <li><code>clock</code>: <code>24</code> for 24-hour time, <code>12</code> for 12-hour time.</li>
+</ul>
+<p>Note that it's possible to type in weird things into the URL (e.g. <code>clock=999</code>) that aren't supported. Such items will either not work or completely break the site on your end. To reset these, click the <b style="color: #b35151">Clear Settings and URL</b> button.</p>
+<p>Settings imported from the old version of brookeafk.com also are compatible with the modern version. Settings in the URL will override whatever you have stored in localStorage.</p>
+
+<h2 id="section-custom-palettes">Custom Palettes</h2>
+
+<ul><li>You can create a custom palette by visiting <a href="palette">https://brookeafk.com/palette</a>.</li><li>Create a palette by clicking on the white boxes to the right of the eighteen events.</li><li>Once you're done designing, click on the purple box beneath the events.</li><li>To import the palette, copy the link in the "URL" section at the bottom of the page and paste it into your browser, or copy the code and click the <span style="font-family: Material">Settings</span> gear, <b>Custom</b> under the <b>Palette</b> sub-menu, <b>Import</b>, and then paste the code and press <kbd>Enter</kbd>.</li><li>Palette names shouldn't be longer than 400 characters and may break if they contain <code>¤ U+00A4 CURRENCY SIGN</code>.</li></ul>
+
+<p>You can share a palette by giving your friends the URL from the palette generator. Once they open the link, they'll see something like this (try it yourself <a href="https://brookeafk.com?palette=JUMyJUE0OWRkNTlmNmY3ZjY1NGU2YzRiODI5MmE4Nzk3MDZjYmY3ZTljYmJiNzk0OTBiMGI3N2Y2MjdlYmFiZjljODBhYThmODhiZDk0NzI4ZjkwYjc4NWFhN2I1ODU4NzU4ODZhN2ViZDhiY2NkNmFmJUMyJUE0UGFsZSUyMEZvcmVzdCVDMiVBNGJyb29raWU=" target="_blank">here</a>):</p>
+<img src="/help_images/custom-palette-example.png" width="80%">
+<p>If they select "Yes!", they'll be able to give a name to the palette.</p>
+<p>You can currently only have one custom palette enabled at a time (why would you need more?), but I'll try to fix this later.
+
+<h2 id="section-faq">Frequently Asked Questions<br><span style="font-size: 18px"><i>&#x2e3a; in order of importance &#x2e3a;</i></span></h2>
+
+<h3>The timestamps on the site are wrong</h3>
+<ul><li>This is most likely an issue with your system clock being wrong, too. I recommend you fix that first&mdash;it'll mess with a bunch of other web pages, too&mdash;but if you're looking for a quick solution, try appending <code>?offset=MINUTES</code> to the URL, where <code>MINUTES</code> is the number of minutes you'd like all of the timestamps to change by. <code><a href="https://brookeafk.com?offset=-180" target="_blank">https://brookeafk.com?offset=-180</a></code> would move all of the timestamps backwards by three hours. Use <code>?offset=0</code> to reset it.</li></ul>
+
+<h3>There's no events</h3>
+<ul><li>First of all, try reloading the page (use <kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>). That'll usually solve it. If that doesn't work, you should probably reload the page again, because sometimes it usually takes two. If that doesn't work, you've officially exhausted my supply of ideas. If that's the case, please <a href="https://discord.gg/nuUms8r9Ke" target="_blank">contact me in the Pit Resource Support Discord server</a></b> and explain to me the issue (no events).</li></ul></ul>
+
+<h3>How do I go to the old version of brookeafk.com?</h3>
+<ul><li>Is the site too gradient-y for you now? Click <a href="https://brookeafk.com/2022" target="_blank">here</a> or go to <a href="https://brookeafk.com/2022" target="_blank">brookeafk.com/2022</a>. I won't be mad.</li></ul>
+
+<h3>What's new in the redesign?</h3>
+<ul><li>Notifications should actually work, now. While that alone would be a groundbreaking, revolutionary feature, I've also added icons, gradients, a map change timer, a few more settings, this help guide, and the site should run a <i>lot</i> faster, now. I had to re-write way too many lines of code that my younger, more malicious self hastily wrote in at 2 in the morning.</li></ul>
+
+<h3>I need an older version of the site.</h3>
+<ul><li><i>Really?</i> Those old versions were pretty terrible. If you truly desire my laggy, buggy code, four early versions of the site are available below:<br><a href="v1" target="_blank">v0.1</a> &bullet; <a href="v2" target="_blank">v0.1.5</a> &bullet; <a href="v3" target="_blank">v0.2.1</a> &bullet; <a href="2022" target="_blank">v0.6.7</a>.</li></ul>
+
+<h3>How do I get a quote on the bottom of the site?</h3>
+<ul><li>The quotes on the bottom were the people who supported me back when brookeafk.com was in its <a href="https://docs.google.com/spreadsheets/d/1pP78ifctBLkuIPH2lg5pzTS2s1pDTXXPMGYVnKgvlug/edit#gid=108982194" target="_blank">archaic spreadsheet phase</a> and didn't have nearly as much support as it does now. I'm currently not looking for more quotes on the bottom of the site&mdash;my apologies.</li></ul>
+
+<h3>Who are you?</h3>
+<ul><li>I'm Brooke! I made this site over a year ago to track when dragon eggs were happening since I was a non and desperately needed the XP they gave. I've also helped make a couple of other things, like <a href="https://pit.wiki" target="_blank">the Pit Wiki</a> and <a href="https://brookeafk.com/tracker" target="_blank">this cool player tracker</a>. I also help with some <a href="https://statsify.net" target="_blank">Statsify</a> development.</li></ul>
+
+<h3>Why did you redesign the site, anyway?</h3>
+<ul><li>To me, it looked a bit aged&mdash;the Minecraft font certainly didn't help. I wanted to take an already-existing project and see if I could make it better. The new version also has performance improvements, since there was a <i>lot</i> to improve (the old version of the site tries changing the color of each event twenty-five times a second). In its current state, the new site runs significantly faster than the old one, despite how flashy and new it looks. I think it looks a lot better now, but if you disagree, you can <a href="https://brookeafk.com/2022" target="_blank">always go back</a>.</li></ul>
+
+<h3>Why does your code suck?</h3>
+<ul><li>It was my first JavaScript project 🥲 I mean, if it works, it works... right? Why are you even looking at the code, anyway? If it's not working, that's a whole other issue. The GitHub repo for this page is <a href="https://github.com/brooke-gill/pit" target="_blank">here</a>.</li></ul>
+
+<h3>Why didn't you use ClumplunkleJS or <code>[insert random JavaScript library]</code>? Why's it all client-side?</h3>
+<ul><li>There's no need to. It's a really simple site with a simple purpose. What would I use something like that for, anyway? (also because I can't be bothered learning React)</li></ul>
+
+<h3>But you could've just implemented Clumplunkle's <code>BlorgleFlorgle()</code> method and it would cure cancer and&mdash;</h3>
+<ul><li>shut up !!! !! !&nbsp;&nbsp;&nbsp;!&nbsp;&nbsp;!!! ! !&nbsp;1!</li></ul>
+
+<p>Are you in need of additional assistance, or have a question that's not listed here? Please join the <a href="https://discord.gg/nuUms8r9Ke" target="_blank">Pit Resource Support</a> Discord server and create a private ticket. Alternatively, you can contact me through this project's <a href="https://github.com/brooke-gill/pit" target="_blank">GitHub repository</a>.</p>
+</body>
+
+</html>
+<style>
+.header {
+  font-size: 30px;
+  color: wheat;
+}
+
+.subheader {
+  font-size: 16px;
+  color: white;
+  font-style: italic;
+}
+
+.body {
+  font-size: 16px;
+  color: #fff;
+}
+
+.section {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.small {
+  font-size: 12px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.tt {
+  display: inline-block;
+  line-height: 1.5em;
+}
+
+.little {
+  font-size: 14px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.justsmall {
+  font-size: 12px;
+}
+
+.justlittle {
+  font-size: 14px;
+}
+
+.center {
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.note {
+  vertical-align: super;
+  font-style: italic;
+  font-size: 13px;
+}
+
+.item {
+  outline: 1px solid white;
+  width: 200px;
+  float: right;
+  margin: 10px;
+  border: 1px solid white;
+}
+
+.item30 {
+  /* 1.5× larger than item */
+  outline: 1px solid white;
+  width: 300px;
+  float: right;
+  margin: 10px;
+  border: 1px solid white;
+}
+
+.tableheader {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  padding: 5px;
+}
+
+.invisible {
+  border: 0px;
+}
+
+.highlighted {
+  border: 2px solid #cc0000aa;
+  background: #cc000055;
+}
+
+.invisible_fill {
+  background-color: var(--bgtp);
+}
+
+.headerbox {
+  background-color: var(--bgtp);
+  width: 80%;
+  padding: 20px 50px 20px;
+  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  border-radius: 15px;
+}
+
+.smallbreak {
+  height: 0px;
+  visibility: hidden;
+}
+
+.clickme {
+  cursor: pointer;
+}
+
+.supersecret {
+  cursor: pointer;
+  font-weight: bold;
+  color: #fdf;
+}
+
+#content-error {
+  transition-duration: 0.5s;
+}
+
+.box {
+  background-color: var(--bgtp);
+  width: 80%;
+  padding: 20px 50px 20px;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  border-radius: 15px;
+  position: relative;
+  top: 50px;
+}
+
+.bigimage {
+  width: 600px;
+}
+
+@media only screen and (max-width: 800px) {
+  .bigimage {
+    width: 80%;
+  }
+}
+
+.m0 {
+  color: #000;
+}
+.m1 {
+  color: #00a;
+}
+.m2 {
+  color: #0a0;
+}
+.m3 {
+  color: #0aa;
+}
+.m4 {
+  color: #a00;
+}
+.m5 {
+  color: #a0a;
+}
+.m6 {
+  color: #fa0;
+}
+.m7 {
+  color: #aaa;
+}
+.m8 {
+  color: #555;
+}
+.m9 {
+  color: #55f;
+}
+.ma {
+  color: #5f5;
+}
+.mb {
+  color: #5ff;
+}
+.mc {
+  color: #f55;
+}
+.md {
+  color: #f5f;
+}
+.me {
+  color: #ff5;
+}
+.mf {
+  color: #fff;
+}
+.td {
+  color: #caa;
+}
+
+.shadowf {
+  text-shadow: 0px 0px 8px #fff;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hoverimage {
+  opacity: 0.4;
+  transition-duration: 0.5s;
+}
+
+.hoverimage:hover {
+  opacity: 1;
+}
+
+
+code {
+  font-family: "Roboto Mono", ui-monospace, Menlo, "Cascadia Mono", "Segoe UI Mono", "Fira Mono", "Droid Sans Mono", monospace;
+  color: #cac;
+  background-color: #383838;
+  padding: 2px;
+}
+
+pre > code {
+  background-color: transparent;
+}
+
+a, .headerlist {
+  transition-duration: 0.2s;
+}
+
+a:link {
+  color: #5abbb7;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #4b9b98;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #c2edee;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #ddf0f0;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.tip {
+  position: relative;
+  border-bottom: 1px dotted #ffffff88;
+  cursor: help;
+}
+
+.tip .tiptext {
+  visibility: hidden;
+  word-wrap: break-word;
+  width: 160px;
+  background-color: #000000cc;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: -85px;
+  padding: 10px;
+  font-weight: 400;
+  font-style: oblique;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.tip .tiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #00000088 transparent transparent transparent;
+}
+
+.icon {
+  font-family: Material;
+}
+
+.tip:hover .tiptext, .tip:active .tiptext {
+  visibility: visible;
+}
+
+.tip:hover .tiptext {
+  opacity: 1;
+}
+
+.searchresult {
+  background-color: #3b85a0;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Material;
+  src: url("./font/Material.ttf");
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./font/InterVariable.ttf");
+}
+
+:root {
+  --mc0: #000;
+  --mc1: #00a;
+  --mc2: #0a0;
+  --mc3: #0aa;
+  --mc4: #a00;
+  --mc5: #a0a;
+  --mc6: #fa0;
+  --mc7: #aaa;
+  --mc8: #555;
+  --mc9: #55f;
+  --mca: #5f5;
+  --mcb: #5ff;
+  --mcc: #f55;
+  --mcd: #f5f;
+  --mce: #ff5;
+  --mcf: #fff;
+  --td: #caa;
+  --bg: #252525;
+  --bgtp: rgba(37, 37, 37, 0.95);
+}
+
+.rainbow_text_animated {
+    background: linear-gradient(to right, #f55, #fa0, #ff5, #5f5, #5ff, #f5f, #f55, #fa0, #ff5, #5f5, #5ff, #f5f, #f55, #fa0, #ff5, #5f5, #5ff, #f5f, #f55, #fa0, #ff5, #5f5, #5ff, #f5f, #f55);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 12s ease-in-out infinite;
+    background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+    0%,100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+td img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.anchor {
+  position: absolute;
+  transform: translateY(-100px);
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+ul {
+  list-style-type: square;
+}
+
+.funky {
+  background: linear-gradient(150deg, #f5deb3 0%, #a77b29 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.groovy {
+  background: linear-gradient(150deg, #e51bbc 0%, #f5d254 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#searchBar:focus, .searchbar:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
+  position: relative;
+  width: 250px;
+  background-color: #31313a;
+}
+
+/* thank you to Rahul for showing me the power of CSS Masonry: https://w3bits.com/css-masonry/ */
+.homepagecontainer {
+  margin: 1.5em auto;
+  max-width: 1068px;
+  column-gap: 1.5em;
+}
+
+.homepageitem {
+  background: #4c4c4c40;
+  padding: 1em;
+  margin: 0 0 1.5em;
+  break-inside: avoid-column;
+}
+
+kbd {
+  border: 1px solid #ccc;
+  background-color: #454545;
+  border-radius: 4px;
+  font-family: Inter;
+  font-size: 12px;
+  padding: 4px;
+}
+
+.searchitem {
+  border-top: 1px solid #3f3f3f;
+  border-bottom: 1px solid #3f3f3f;
+  margin: 0;
+  padding: 4px;
+}
+
+.searchitem:hover {
+  background-color: #4a6164;
+}
+
+.hamburger {
+  color: #eee;
+}
+
+#aUL {
+  display: none;
+  list-style-type: square;
+  background-color:#363636;
+  border-radius: 15px;
+  padding: 20px 20px 20px 20px;
+  margin: 50px 100px 0px 0px;
+  right: 0px;
+  width: 250px;
+  z-index: 4;
+  position:fixed;
+}
+
+.headerlist {
+  list-style-type: square;
+  background-color:#363636;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 35px 0px 0px calc(15px + 6%);
+  left: 0px;
+  width: 250px;
+  z-index: 4;
+  position: fixed;
+  transform: translate(0px, -24px);
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0px 0px 5px #1d1d1d;
+}
+
+#menuopened:checked ~ .headerlist {
+  transform: translate(0px, 0px);
+  opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (min-width: 1024px) {
+  .homepagecontainer {
+    column-count: 4;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .homepagecontainer {
+    column-count: 3;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .homepagecontainer {
+    column-count: 2;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    background-image: none;
+    background-color: var(--bg);
+  }
+
+  .box {
+    width: auto;
+    padding: 20px 15px 20px;
+  }
+
+  #aUL {
+    width: 175px;
+  }
+
+  #searchBar {
+    width: 50px;
+  }
+
+  #searchBar:focus {
+    width: 100px;
+  }
+
+  .headerbox {
+    width: 90%;
+  }
+}
+/* stylesheet not updating? */
+
+@font-face {
+  font-family: Inter;
+  src: url("./font/Inter-Regular.ttf");
+  font-weight: regular;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./font/Inter-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./font/Inter-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Material;
+  src: url("./font/Material.ttf");
+}
+
+@font-face {
+  font-family: minecraft;
+  src: url("./font/MinecraftRegular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: minecraft;
+  src: url("./font/MinecraftBold.otf");
+  font-weight: bold;
+}
+
+code {
+  word-wrap: break-word;
+}
+</style>

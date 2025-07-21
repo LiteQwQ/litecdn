@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<center style="font-size: 24px"> <!-- i don't care that this tag is outdated. i  do not care .-->
+<p>Hey! This is a test to determine why brookeafk.com's notifications on Chrome aren't working.</p>
+<p>Test 2</p>
+
+</center>
+<script>
+  let count = 0;
+function notify() {
+  const options = {
+    body: 'hello!',
+    tag: 'notification-tag' + count++
+  };
+  const notification = new Notification('', options);
+  console.log("sent")
+}
+
+setInterval(notify, 1000);
+</script>

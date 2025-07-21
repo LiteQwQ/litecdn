@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="stylesheet" href="stylesheet.css?v=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stash - The Hypixel Pit Wiki</title>
+<meta name="description" content="">
+<meta name="author" content="adjective_n0un">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+<meta name="keywords" content="Hypixel Pit, Hypixel, Hypixel Stash, The Pit Stash, Stash, Pit Stash">
+<script type="text/javascript" src="/jquery-3.6.3.min.js"></script>
+<script> 
+/*
+Heya. adj here.
+It's unlikely anyone will ever read this.
+I guess this'd be a nice place to put a story nobody will read.
+Two years ago, the only cheaters I'd met were the occasional bhopper plus the person at mid, who, at the time, I had no idea was almost always cheating.
+They would steadily get banned then. But it only got progressively worse. As you probably know, most of the players who hunt or grind at mid cheat.
+And so I adapted. Stayed away from the center, used mystics sparingly, and scanned lobbies for cheaters. Soon, I'd relegated myself to only contracting, as it was the only way I'd stay sane playing the game.
+It was a slow grind. But with the time I spent, I learned a lot about how the pit works, through many players such as Mathematiqs, PinkEv3, octagonalpaul, and some experimentation by myself! I suppose I owe it partially to cheaters that I knew so much about the game.
+Being the background character is kinda nice. You get to watch communities, malicious as they are, and learn from them. You also don't get hunted as often as so-called "known players".
+Then Brooke showed me something. A discord, with one of the more cheater-infested communities on Hypixel. And I realized something.
+The desire to cheat is not driven by the thrill of cheating itself. It is driven by ambition.
+Without going into names, many of the top players who cheat in the pit motivate themselves with the dream of one day hitting that total XP leaderboard, or maybe they're trying to hit a speed record, or perhaps they try to get as high of a kill:death ratio as possible.
+Make of this what you will. Personally, I think P50 was a mistake.
+*/
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+</script>
+</head>
+<body>
+
+<div id="header"></div>
+<div class="box">
+<span class="body">
+  <table class="item30 body">
+    <tr>
+        <td style="text-align: center"><img src="./images/despair.png" width="100%"></td>
+    </tr>
+    <tr>
+        <td class="small center m7">Image pending.</td>
+    </tr>
+</table>
+<span class="header">Stash</span><br>
+<span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
+<hr>
+<p>The <strong>stash</strong> is an emergency storage feature bound to every individual player.</p>
+
+<p>In most events where a player would normally lose an item through a forced means, the item will be sent to the player's stash. Upon changing lobbies, players will be reminded if there are items in their stash. Players may recover items from their stash using the <a href="Commands#pickupstash"><span class="me">/pickupstash</span> command</a>, or by clicking the reminder message, which will return as many of the earliest stashed items as their inventory will allow.</p>
+<p>Items may be sent to the stash under the following conditions:</p>
+<ul>
+<li>A <a href="Commands#trade">trade</a> is cancelled but the player does not have enough inventory space to receive all their items back.</li>
+<li>The server attempts to give the player an item, such as a <a href = "Chunk_of_Vile">Chunk of Vile</a>, but the player's inventory is full.</li>
+</ul>
+  
+<p>Additionally, a special stash is created if the player enters the <a href = "Spire">Spire</a> event. This stash records the location of each item in the player's inventory and the armor they were wearing, which will be returned to their respective slots instead of the first available slots in the player's inventory when the event ends. If the player is not present in the server at the event's end, all items in the Spire stash will be sent to the player's normal stash.</p>
+
+<p>The stash is assumed to be able to store as many items as can fit in an integer limit byte array (2,147,483,647 bytes). <a href="Perks">Perk</a> items cannot be added to the stash. Instead of entering the stash, these types of items are deleted permanently. Items from <a href = "Mystic_Well">mystic enchantments</a> such as <a href = "Mystic_Pants#Instaboom">Instaboom TNT</a> may be added to the stash, but will be deleted if the player attempts to pick them up without pants of the respective enchantment.</p>
+<p>Mystic items that are in the stash still lose lives on the player's death, and are cleared from the stash if they break.</p>
+
+<hr class="smallbreak">
+
+  <p class = "section">Trivia</p>
+  <p>Due to the limited inventory space present in The Pit, some players use the stash to store excess items.</p>
+</body>
+
+</html>

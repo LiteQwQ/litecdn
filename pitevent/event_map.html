@@ -1,0 +1,348 @@
+<script src="event_history.js"></script>
+<link rel="stylesheet" href="https://pit.wiki/stylesheet.css">
+<title>Pit Events Analysis</title>
+<title>Pit Events Analysis</title>
+<body style="background-color: #1a121a;">
+<div class="box">
+<span class="body" style="font-family: Inter">
+<p><b><span id="count"></span></b> events loaded (<span id="count-minor"></span> minor, <span id="count-major"></span> major)</p>
+<p>Lastest Event: <b><span id="latest"></span></b> <i>(<span id="latest-readable"></span>)</i></p>
+<h2>Event Counts</h2>
+<h2>Event Counts</h2>
+<p id="counts"></p>
+<p id="percentages"></p>
+<h2>Major Event Droughts</h2>
+<p id="droughts"></p>
+<p id="major-time-droughts"></p>
+<p id="minor-time-droughts"></p>
+
+<h2>Major Event Droughts</h2>
+<p id="droughts"></p>
+<p id="major-time-droughts"></p>
+<p id="minor-time-droughts"></p>
+
+</span>
+
+<style>
+pre {
+    background-color: #111;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 5px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+</style>
+
+<pre><code id="histogram"></code></pre>
+</span></div>
+</body>
+<script>
+var event_count = all_events.length;
+var latest_event = all_events[event_count - 1]["timestamp"];
+var latest_event_date = new Date(latest_event);
+var minor_count = 0;
+var major_count = 0;
+
+document.getElementById("count").innerHTML = event_count.toLocaleString();
+
+document.getElementById("latest").innerHTML = latest_event;
+document.getElementById("latest-readable").innerHTML = latest_event_date
+
+var events = ["Quick Maths","Dragon Egg","2x Rewards","Care Package","KOTL","KOTH","Auction","Giant Cake","All bounty","Squads","Beast","Pizza","Rage Pit","Spire","Robbery","Blockhead","Raffle","Team Deathmatch"]
+var events_minor = ["Quick Maths","Dragon Egg","2x Rewards","Care Package","KOTL","KOTH","Auction","Giant Cake","All bounty"]
+var events_major = ["Squads","Beast","Pizza","Rage Pit","Spire","Robbery","Blockhead","Raffle","Team Deathmatch"]
+var abbreviations_minor = ["M","E","2","C","L","H","A","G","B"];
+
+var colors = ["#45234f","#4f234d","#234f2c","#4f3023","#394f23","#234f48","#6e5032","#35234f","#4f4d23","#206dc5","#20c541","#c59f20","#c52320","#c520c3","#c5c320","#2323c5","#c0c020","#7320c5"]
+
+var event_occurences = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var minor_last = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+var last = 100;
+var minors = [];
+var histogram_minor = [];
+
+for(a = 0; a < event_count; a++) {
+    if(all_events[a]["type"] == "major") major_count += 1;
+    else {
+        minor_count += 1;
+        minors.push(all_events[a]["event"])
+    }
+    event_occurences[events.indexOf(all_events[a]["event"])] += 1;
+}
+
+for(e = 0; e < minors.length; e++) {
+    minor_last[events.indexOf(minors[e])] += 1;
+    if(e >= last) minor_last[events.indexOf(minors[e - last])] -= 1;
+    histogram_minor[e] = "";
+    for(f = 0; f < events_minor.length; f++) {
+        histogram_minor[e] += (`<span style="color: ` + colors[events.indexOf(events_minor[f])] + `">` + (abbreviations_minor[events_minor.indexOf(events[f])]).repeat(minor_last[f]) + `</span>`); 
+    }
+    ////console.log(minor_last);
+}
+
+for(g = 1; g <= 200; g++) {
+    document.getElementById("histogram").innerHTML += histogram_minor[Math.floor(histogram_minor.length * (200 - g)/200)] + "&nbsp;&nbsp;&nbsp;" + Math.floor(histogram_minor.length * (200 - g)/200) + "<br>";
+}
+
+document.getElementById("count-minor").innerText = minor_count.toLocaleString();
+document.getElementById("count-major").innerText = major_count.toLocaleString();
+
+var events_sorted = [];
+for(ag = 0; ag < events.length; ag++) {
+    events_sorted[ag] = [events[ag], event_occurences[ag]]; 
+}
+events_sorted.sort(function(a, b) { return b[1] - a[1] });
+var events_sorted = [];
+for(ag = 0; ag < events.length; ag++) {
+    events_sorted[ag] = [events[ag], event_occurences[ag]]; 
+}
+events_sorted.sort(function(a, b) { return b[1] - a[1] });
+
+for(b = 0; b < events.length; b++) {
+    document.getElementById("counts").innerHTML += events_sorted[b][0] + " &ndash; <b>" + events_sorted[b][1] + (b == 8?"</b><br>":"</b> / ")
+    document.getElementById("percentages").innerHTML += events_sorted[b][0] + " &ndash; <b>" + (events_sorted[b][1]/(b > 8 ?major_count:event_count) * 100).toFixed(2) + (b == 8?"%</b><br>":"%</b> / ")
+}
+
+var gap_ids = [];
+function findGaps() {
+    for(c = 1; c < all_events.length; c++) {
+        if(((all_events[c]['timestamp'])/60000 - (all_events[c - 1]['timestamp'])/60000) > 30) { // more than 30 minutes since last event
+            gap_ids.push(c);
+        }
+    }
+}
+
+findGaps();
+var all_events_divided = splitArrayByPositions(all_events, gap_ids);
+
+var all_gaps = [];
+for(d = 0; d < all_events_divided.length; d++) {
+    for(e = 1; e < all_events_divided[d].length; e++) {
+        //console.log([d, e])
+        all_gaps.push(((all_events_divided[d][e]['timestamp'])/60000 - (all_events_divided[d][e - 1]['timestamp'])/60000))
+    }
+}
+
+var minor_gaps = [];
+var major_gaps = [];
+for(d = 0; d < all_events_divided.length; d++) {
+    var divided_major_gaps = [];
+    for(e = 1; e < all_events_divided[d].length; e++) {
+        if(all_events_divided[d][e]['type'] == "minor" && all_events_divided[d][e - 1]['type'] == "minor") minor_gaps.push((all_events_divided[d][e]['timestamp'])/60000 - (all_events_divided[d][e - 1]['timestamp'])/60000)
+        if(all_events_divided[d][e]['type'] == "major") divided_major_gaps.push((all_events_divided[d][e]['timestamp']))
+    }
+    for(e1 = 1; e1 < divided_major_gaps.length; e1++) {
+        major_gaps.push((divided_major_gaps[e1])/60000 - (divided_major_gaps[e1 - 1])/60000)
+    }
+}
+
+function majorDrought(arr) {
+    var droughts = [];
+    var firstFound = false;
+    var currentDrought = 0;
+    for(a = 0; a < arr.length; a++) {
+        if(arr[a]['type'] == "minor") {
+            currentDrought += 1;
+        } else {
+            if(firstFound) droughts.push(currentDrought);
+            else firstFound = true;
+            currentDrought = 0;
+        }
+    }
+    return droughts;
+}
+
+var allMajorDroughts = [];
+for(aa = 0; aa < all_events_divided.length; aa++) {
+    allMajorDroughts.push(...majorDrought(all_events_divided[aa]))
+}
+
+function generateHistogram(arr) {
+    var return_histogram = [];
+    for(z1 = 0; z1 < arr.length; z1++) {
+        if(return_histogram[arr[z1]] == undefined) return_histogram[arr[z1]] = 1;
+        else return_histogram[arr[z1]] += 1;
+    }
+    return return_histogram;
+}
+
+var drought_histogram = generateHistogram(allMajorDroughts);
+
+for(ab = 0; ab < drought_histogram.length; ab++) {
+    if(drought_histogram[ab] != undefined) {
+        document.getElementById("droughts").innerHTML += `<b>` + ab + ` </b>events: <b>` + drought_histogram[ab] + `</b><br>`
+    }
+}
+
+var major_time_droughts_histogram = generateHistogram(major_gaps);
+for(ab = 0; ab < major_time_droughts_histogram.length; ab += 5) {
+    var drought_sum = 0;
+    for(ab1 = 0; ab1 < 5; ab1++) {
+        drought_sum += (major_time_droughts_histogram[ab + ab1]==undefined?0:major_time_droughts_histogram[ab + ab1])
+    }
+    if(drought_sum != 0) document.getElementById("major-time-droughts").innerHTML += `<b>` + ab + ` &ndash; ` + (ab + 4) + `</b> minutes: <b>` + drought_sum + `</b><br>`
+}
+
+var minor_time_droughts_histogram = generateHistogram(minor_gaps);
+for(ab = 0; ab < minor_time_droughts_histogram.length; ab++) {
+    if(minor_time_droughts_histogram[ab] != undefined) {
+        document.getElementById("minor-time-droughts").innerHTML += `<b>` + ab + ` </b>minutes: <b>` + minor_time_droughts_histogram[ab] + `</b><br>`
+    }
+    document.getElementById("counts").innerHTML += events_sorted[b][0] + " &ndash; <b>" + events_sorted[b][1] + (b == 8?"</b><br>":"</b> / ")
+    document.getElementById("percentages").innerHTML += events_sorted[b][0] + " &ndash; <b>" + (events_sorted[b][1]/(b > 8 ?major_count:event_count) * 100).toFixed(2) + (b == 8?"%</b><br>":"%</b> / ")
+}
+
+var gap_ids = [];
+function findGaps() {
+    for(c = 1; c < all_events.length; c++) {
+        if(((all_events[c]['timestamp'])/60000 - (all_events[c - 1]['timestamp'])/60000) > 30) { // more than 30 minutes since last event
+            gap_ids.push(c);
+        }
+    }
+}
+
+findGaps();
+var all_events_divided = splitArrayByPositions(all_events, gap_ids);
+
+var all_gaps = [];
+for(d = 0; d < all_events_divided.length; d++) {
+    for(e = 1; e < all_events_divided[d].length; e++) {
+        //console.log([d, e])
+        all_gaps.push(((all_events_divided[d][e]['timestamp'])/60000 - (all_events_divided[d][e - 1]['timestamp'])/60000))
+    }
+}
+
+var minor_gaps = [];
+var major_gaps = [];
+for(d = 0; d < all_events_divided.length; d++) {
+    var divided_major_gaps = [];
+    for(e = 1; e < all_events_divided[d].length; e++) {
+        if(all_events_divided[d][e]['type'] == "minor" && all_events_divided[d][e - 1]['type'] == "minor") minor_gaps.push((all_events_divided[d][e]['timestamp'])/60000 - (all_events_divided[d][e - 1]['timestamp'])/60000)
+        if(all_events_divided[d][e]['type'] == "major") divided_major_gaps.push((all_events_divided[d][e]['timestamp']))
+    }
+    for(e1 = 1; e1 < divided_major_gaps.length; e1++) {
+        major_gaps.push((divided_major_gaps[e1])/60000 - (divided_major_gaps[e1 - 1])/60000)
+    }
+}
+
+function majorDrought(arr) {
+    var droughts = [];
+    var firstFound = false;
+    var currentDrought = 0;
+    for(a = 0; a < arr.length; a++) {
+        if(arr[a]['type'] == "minor") {
+            currentDrought += 1;
+        } else {
+            if(firstFound) droughts.push(currentDrought);
+            else firstFound = true;
+            currentDrought = 0;
+        }
+    }
+    return droughts;
+}
+
+var allMajorDroughts = [];
+for(aa = 0; aa < all_events_divided.length; aa++) {
+    allMajorDroughts.push(...majorDrought(all_events_divided[aa]))
+}
+
+function generateHistogram(arr) {
+    var return_histogram = [];
+    for(z1 = 0; z1 < arr.length; z1++) {
+        if(return_histogram[arr[z1]] == undefined) return_histogram[arr[z1]] = 1;
+        else return_histogram[arr[z1]] += 1;
+    }
+    return return_histogram;
+}
+
+var drought_histogram = generateHistogram(allMajorDroughts);
+
+for(ab = 0; ab < drought_histogram.length; ab++) {
+    if(drought_histogram[ab] != undefined) {
+        document.getElementById("droughts").innerHTML += `<b>` + ab + ` </b>events: <b>` + drought_histogram[ab] + `</b><br>`
+    }
+}
+
+var major_time_droughts_histogram = generateHistogram(major_gaps);
+for(ab = 0; ab < major_time_droughts_histogram.length; ab += 5) {
+    var drought_sum = 0;
+    for(ab1 = 0; ab1 < 5; ab1++) {
+        drought_sum += (major_time_droughts_histogram[ab + ab1]==undefined?0:major_time_droughts_histogram[ab + ab1])
+    }
+    if(drought_sum != 0) document.getElementById("major-time-droughts").innerHTML += `<b>` + ab + ` &ndash; ` + (ab + 4) + `</b> minutes: <b>` + drought_sum + `</b><br>`
+}
+
+var minor_time_droughts_histogram = generateHistogram(minor_gaps);
+for(ab = 0; ab < minor_time_droughts_histogram.length; ab++) {
+    if(minor_time_droughts_histogram[ab] != undefined) {
+        document.getElementById("minor-time-droughts").innerHTML += `<b>` + ab + ` </b>minutes: <b>` + minor_time_droughts_histogram[ab] + `</b><br>`
+    }
+}
+
+
+
+
+function splitArrayByPositions(array, positions) {
+  array = array.slice(0);
+  positions = positions.slice(0);
+  // Sort positions array in descending order
+  positions.sort((a, b) => b - a);
+
+  var result = [];
+  var lastIndex = array.length;
+
+  for (var i = 0; i < positions.length; i++) {
+    var currentPosition = positions[i];
+
+    // Skip if the position is out of bounds
+    if (currentPosition < 0 || currentPosition >= lastIndex) {
+      continue;
+    }
+
+    // Split the array at the current position and add the chunk to the result
+    var chunk = array.splice(currentPosition, lastIndex - currentPosition);
+    result.unshift(chunk);
+
+    lastIndex = currentPosition;
+  }
+
+  // Add the remaining chunk to the result
+  result.unshift(array);
+}
+
+
+function splitArrayByPositions(array, positions) {
+  array = array.slice(0);
+  positions = positions.slice(0);
+  // Sort positions array in descending order
+  positions.sort((a, b) => b - a);
+
+  var result = [];
+  var lastIndex = array.length;
+
+  for (var i = 0; i < positions.length; i++) {
+    var currentPosition = positions[i];
+
+    // Skip if the position is out of bounds
+    if (currentPosition < 0 || currentPosition >= lastIndex) {
+      continue;
+    }
+
+    // Split the array at the current position and add the chunk to the result
+    var chunk = array.splice(currentPosition, lastIndex - currentPosition);
+    result.unshift(chunk);
+
+    lastIndex = currentPosition;
+  }
+
+  // Add the remaining chunk to the result
+  result.unshift(array);
+
+  return result;
+  return result;
+}
+
+
+</script>

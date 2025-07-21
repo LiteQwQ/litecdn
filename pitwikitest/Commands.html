@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="stylesheet.css?v=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commands - The Hypixel Pit Wiki</title>
+<meta name="description" content="">
+<meta name="author" content="BrookeAFK">
+<meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit Commands, Hypixel, Hypixel Commands, The Pit Commands,">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<script type="text/javascript" src="/jquery-3.6.3.min.js"></script>
+<script> 
+
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div class="box">
+<span class="body">
+<span class="header">Commands</span><br>
+<span class="subheader">From the <a href="./">Hypixel Pit Wiki</a></span>
+<hr>
+<p><strong>Commands</strong> are ways players can modify aspects of their game. This article lists useful commands for Pit players.</p>
+
+
+<table class="body">
+
+    <tr style="font-weight: bold; position: sticky; top: 0" class="invisible_fill">
+  
+      <td>Command</td><td>Description</td>
+  
+    </tr>
+    <tbody id="spawnHeader"><tr>
+        <td><span class="anchor" id="spawn"></span>/spawn<br>/respawn</td><td>Instantly teleport to spawn. Cannot be used in combat or while on a <a href = "Megastreaks">megastreak</a>. Shares a 10 second cooldown with /oof.</td>
+      </tr>
+     </tbody>
+    <tbody id="oofHeader"><tr>
+      <td><span class="anchor" id="oof"></span>/oof</td><td>Instantly die (dealt as <span class="mc">500,000♥&#xFE0E;</span> of damage). All effects that would occur on a normal death still occur. Shares a 10 second cooldown with /spawn.</td>
+    </tr>
+   </tbody>
+ <tbody id="tradeHeader"><tr>
+    <td><span class="anchor" id="trade"></span>/trade [<span class="m7">username</span>]</td><td>Sends a trade request to the player inputted. Trades can contain up to eight items and <a href="Gold"><span class="m6">50,000g</span></a>. Players are limited to 25 trades and 50,000 traded <a href="Gold"><span class="m6">gold</span></a> daily. Unlocks at level 60.</td>
+  </tr>
+ </tbody>
+ <tbody id="tradelimitsHeader"><tr>
+  <td><span class="anchor" id="tradelimits"></span>/tradelimits</td><td>Displays the player's daily trade limits.</td>
+  </tr>
+  </tbody>
+  <tbody id="offerHeader"><tr>
+    <td><span class="anchor" id="trade"></span>/offer [<span class="m7">username</span>] [<a href="Gold"><span class="m6">gold</span></a>]</td><td>Sends a trade offer of the item you are holding to the inputted username for a specific amount of <a href="Gold"><span class="m6">gold</span></a>. The recipient has 30 seconds to accept the offer. Offers count towards trade limits. Unlocks at level 60.</td>
+  </tr>
+ </tbody>
+ <tbody id="pitchatHeader"><tr>
+    <td><span class="anchor" id="pitchat"></span>/pitchat</td><td>Opens a GUI to toggle certain messages in the game's chat. From left-to-right, the player has the option to toggle chat messages for bounties, killstreaks, prestiges, minor events, their kill feed, player chat, and miscellaneous (such as tips, notes, gold pickups, and participation XP). Unlocks at level 5.</td>
+  </tr>
+ </tbody>
+ <tbody id="viewHeader"><tr>
+    <td><span class="anchor" id="view"></span>/view [<span class="m7">username</span>]<br>/blue [<span class="m7">username</span>]</td><td>Opens a GUI displaying stats on the selected player. Stats include the player's <a href="Level">level</a>, <a href="Gold"><span class="m6">gold</span></a>, hours played, <a href="Renown"><span class="me">renown</span></a>, armor, inventory, ender chest, selected <a href="Killstreaks">killstreaks</a>, and <a href="Perks">perks</a>. Cannot /view nicked players, game masters, or admins. Unlocks permanently at level 70.<br><i>/view can also be triggered by sneaking and right-clicking on a player.</i></td>
+  </tr>
+ </tbody>
+ <tbody id="pickupstashHeader"><tr>
+  <td><span class="anchor" id="pickupstash"></span>/pickupstash</td><td>Transfers items from the player's <a href="Stash">stash</a> to their inventory.</td>
+</tr>
+</tbody>
+ <tbody id="play_pitHeader"><tr>
+    <td><span class="anchor" id="play_pit"></span>/play pit</td><td>Warps the player into a random Pit lobby. On occasion, this will be the lobby the player is currently in. Changing lobbies resets the player's <a href="Killstreaks">killstreak</a>. If used while in combat, die and lose 3 lives on all <a href="Mystic_Well">mystic items</a>.</td>
+  </tr>
+ </tbody>
+ <tbody id="lobbyHeader"><tr>
+    <td><span class="anchor" id="lobby"></span>/lobby</td><td>Warps the player into the main Hypixel lobby. This resets the player's <a href="Killstreaks">killstreak</a>. If used while in combat, die and lose 3 lives on all <a href="Mystic_Well">mystic items</a>.</td>
+  </tr>
+ </tbody>
+ <tbody id="dropconfirmHeader"><tr>
+  <td><span class="anchor" id="dropconfirm"></span>/dropconfirm [<span class="m7">on</span>/<span class="m7">off</span>]</td><td>Turns the confirmation before dropping on or off. Dropconfirm prevents dropping <a href="Mystic_Well">mystic items</a>, <a href="Chunk_of_Vile">Chunks of Vile</a>, <a href="Funky_Feather">Funky Feathers</a>, and <a href="Philosophers_Cactus">Philosopher's Cacti</a> without pressing the "drop" button three times.</td>
+</tr>
+</tbody>
+ <tbody id="showHeader"><tr>
+  <td><span class="anchor" id="show"></span>/show</td><td>Displays, in chat, the player's held item. 2-minute cooldown, but can be bypassed with <a href="Gold"><span class="m6">10,000g</span></a>.<br><span class="mc">Requires <a href="Pit_Supporter">Pit Supporter</a>.</span></td>
+</tr>
+</tbody>
+<tbody id="eventsHeader"><tr>
+  <td><span class="anchor" id="events"></span>/events</td><td>Displays a GUI containing the next 54 <a href="Major_Event">major events</a> and the <a href="Minor_Event">minor events</a> between them.<br><span class="mc">Requires <a href="Pit_Supporter">Pit Supporter</a>.</span></td>
+</tr>
+</tbody>
+<tbody id="squadHeader"><tr>
+  <td><span class="anchor" id="squad"></span>/squad [<span class="m7">username</span>/<span class="m7">leave</span>]</td><td>Allows players to invite others to their squad in the <a href="Squads">Squads</a> event. Upon running the command, a squad invitation is sent to the recipient, which they can either accept or ignore. Typing <code>/squad leave</code> ejects the player from the squad they are currently in. Typing just <code>/squad</code> displays the members of the squad the player is currently in.<br><span class="mc">Requires an active Squads event to use.</span></td>
+</tr>
+</tbody>
+ <tbody id="coolHeader"><tr>
+    <td><span class="anchor" id="cool"></span>/cool</td><td>Displays, in chat, a list of players in the user's lobby with <a href="Prestige">prestige</a> <span class="m9">IV</span> or greater. List is sorted by <a href="XP"><span class="mb">XP</span></a>, from highest to lowest.<br><span class="mc">Requires the prestige <span class="m6">X</span> <a href="Renown"><span class="me">renown</span></a> upgrade <a href="Renown#Cool_Conclave">Cool Conclave</a>.</span></td>
+  </tr>
+ </tbody>
+ <tbody id="creditHeader"><tr>
+  <td><span class="anchor" id="credit"></span>/credit</td><td>Displays a message that the player helped create the current ongoing <a href="Major_Event">major</a> or <a href="Minor_Event">minor event</a>.<br><span class="mc">Requires the player to have helped create an event in <a href="https://hypixel.net/threads/the-pit-update-0-4-events-extravaganza.2018236/" target="_blank" rel="noopener noreferrer">The Pit 0.4</a>.</span></td>
+</tr>
+</tbody>
+  </table><br>
+  
+  <p class="section">Trivia</p>
+  <p>The <span class="me">/view</span> command's alias, <span class="me">/blue</span>, was translated into a variety of languages. Commands that mimic it include <span class="me">/azul</span> (Spanish), <span class="me">/蓝</span> (Chinese), and <span class="me">/μπλε</span> (Greek).</p>
+</span></div>
+<div id="footer"></div>
+
+</body>
+
+</html>

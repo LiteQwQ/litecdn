@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/stylesheet.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found!</title>
+<meta name="description" content="Whoever put this link up did it wrong.">
+<meta name="author" content="BrookeAFK">
+<meta name="keywords" content="Hypixel Pit Wiki, Hypixel Pit, Hypixel, The Pit">
+<link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
+<link rel="manifest" href="./favicon/site.webmanifest">
+<script type="text/javascript" src="/jquery-3.6.3.min.js"></script>
+<script src="/pages.js?v=202306101123"></script>
+<script src="/zh_cn/pages.js?v=202306101123"></script>
+<script src="/zh_tw/pages.js?v=202306101123"></script>
+<script> 
+
+$(function(){
+  $("#header").load("header.html"); 
+  $("#footer").load("footer.html"); 
+});
+</script>
+</head>
+<body>
+  
+<div id="header"></div>
+<div class="box">
+<span class="body">
+  <table class="item30 body">
+    <tr>
+      <td style="text-align: center"><img src="/images/howtogetback.png" id="image1" width="100%"></td>
+    </tr>
+    <tr>
+      <td style="text-align: center" class="small" id="text1">Approximate location of the search bar.</td>
+    </tr>
+</table>
+</table>
+<span class="header" id="text2">This page doesn't exist!</span><br>
+<hr>
+<p id="text3">It seems you tried to go to a URL that doesn't exist on this site. You can return to the main page by clicking <a href = "index">here</a>, or use the search bar in the header to look for the page you were trying to find.</p>
+<br><br><br><br><br>
+</body>
+
+</html>
+<script>
+  var language = "";
+  thisurl = window.location.toString();
+  var path404 = decodeURIComponent(thisurl.replace(origin, ""))
+
+  if(path404.startsWith("/zh_tw")) language = "zh_tw";
+  if(path404.startsWith("/zh_cn")) language = "zh_cn";
+  path404 = path404.replace(("/" + language), "")
+  if(path404.startsWith("/")) path404 = path404.replace("/", "")
+
+
+  path404 = MakeBasic(path404.toLowerCase());
+
+  console.log(path404)
+
+  searchPagesVariable = "searchpages"
+  if(language != "") {
+    console.log(language)
+    searchPagesVariable += "_" + language;
+  } // only works with English since all of the sites use a variable called "searchpages". My bad
+  var found = false;
+  for(b = 1; b < window[searchPagesVariable].length; b++) {
+    searchedItem = MakeBasic(window[searchPagesVariable][b][0].toLowerCase());
+    if(!found) { console.log([path404, searchedItem]) }
+    if(searchedItem == path404) {
+      if(!found) { 
+        console.log("REDIRECTING TO " + /* language + "/" + */ window[searchPagesVariable][b][1]);
+        found = true; 
+        window.location = window[searchPagesVariable][b][1];
+      }
+    }
+  }
+
+
+  losturl = window.location.toString();
+  if (language == "zh_tw") {
+    document.getElementById('image1').src = `/images/howtogetback_zh_tw.png`;
+    document.getElementById('text1').innerHTML = `Approximate location of the search bar.`;
+    document.getElementById('text2').innerHTML = `This page doesn't exist!`;
+    document.getElementById('text3').innerHTML = `It seems you tried to go to a URL that doesn't exist on this site. You can check to see if the English version exists by clicking <a href="" id="englishlink">here</a>, return to the main page by clicking <a href = "index">here</a>, or use the search bar in the header to look for the page you were trying to find.`
+    document.getElementById('englishlink').href = losturl.replace('/zh_tw',''); 
+  } 
+  if (language == "zh_cn") {
+    document.getElementById('image1').src = `/images/howtogetback_zh_cn.png`;
+    document.getElementById('text1').innerHTML = `搜索栏大概在这儿吧。`;
+    document.getElementById('text2').innerHTML = ` 欸？找不到这个页面！`;
+    document.getElementById('text3').innerHTML = `你似乎在寻找一个不存在于我们网站的链接。如果存在英文版本点击<a href="" id="englishlink">这里</a>即可跳转，点击<a href = "index">这儿</a>可以回到主页面，或者使用搜索栏去找你想找的页面。`
+    document.getElementById('englishlink').href = losturl.replace('/zh_cn',''); 
+  } 
+
+  function MakeBasic(string_to_become_basic) { //strips all punctuation and fun from the string
+    return string_to_become_basic.replace(/[ '?!,.\/"@#$%^&*()[\]\-_+{}:;<>?]/g, '')
+  }
+</script>
